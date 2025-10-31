@@ -42,7 +42,7 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
 
         const jobId = `job_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-        await state.set(`job: ${jobId}`, {
+        await state.set(`job:${jobId}`, {
             jobId,
             channel,
             email,
@@ -53,7 +53,7 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
         logger.info("Job created", {jobId, channel, email})
 
         await emit({
-            topic: 'yt.submit',
+            topic:'yt.submit',
             data: {
                 jobId,
                 channel,
@@ -66,7 +66,7 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
             body: {
                 success: true,
                 jobId,
-                message: "Your request has been ququed. You will get an email soon with improved suggestions for your youtube videos."
+                message: "Your request has been queued. You will get an email soon with improved suggestions for your youtube videos."
             }
         }
 
