@@ -73,7 +73,7 @@ export const handler = async (eventData: any, { emit, logger, state }: any) => {
                 {
                     "original": "...",
                     "improved": "...",
-                    "rationale": "..."
+                    "rational": "..."
                 }
             ]
         }`;
@@ -123,7 +123,7 @@ export const handler = async (eventData: any, { emit, logger, state }: any) => {
         const improvedTitles: ImprovedTitle[] = parsedResponse.titles.map((title: any, idx: number) => ({
             original: title.original,
             improved: title.improved,
-            rationale: title.rationale,
+            rational: title.rational,
             url: videos[idx].url 
         }));
 
