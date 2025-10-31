@@ -45,7 +45,7 @@ export const handler = async (eventData: any, { emit, logger, state }: any) => {
             const searchData = await searchResponse.json();
 
             if(searchData.items && searchData.items.length > 0) {
-                channelId = searchData.items[0].snippet.channelId;
+                channelId = searchData.items[0].id.channelId;
                 channelName = searchData.items[0].snippet.title;
             }
         } else {
@@ -90,6 +90,8 @@ export const handler = async (eventData: any, { emit, logger, state }: any) => {
             topic: 'yt.channel.resolved',
             data: {
                 jobId,
+                channelId,
+                channelName,
                 email,
             }
         });
