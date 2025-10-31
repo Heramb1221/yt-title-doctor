@@ -1,7 +1,7 @@
 import { EventConfig } from "motia";
 
 // Step - 3: retrieves the latest 5 videos from channel id
-export const config: EventConfig = {
+export const config = {
     name: "fetchVideos",
     type: "event",
     subscribes: ['yt.channel.resolved'],
